@@ -7,7 +7,7 @@
       "source": "git-subdir",
       "url": "https://github.com/jahanson/matt-skills.git",
       "path": "skills",
-      "ref": "shellscript-to-typescript"
+      "ref": "main"
     }
   ]
 }
