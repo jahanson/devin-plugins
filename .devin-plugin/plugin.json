@@ -2,12 +2,11 @@
   "name": "hsn-marketplace",
   "description": "Curated Devin CLI plugins.",
   "skills": [],
-  "optionalPlugins": [
+  "requiredPlugins": [
     {
       "source": "git-subdir",
       "url": "https://github.com/jahanson/matt-skills.git",
-      "path": "skills",
-      "ref": "main"
+      "path": "skills"
     }
   ]
 }

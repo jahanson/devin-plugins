@@ -18,7 +18,7 @@ Install the marketplace meta-plugin:
 devin plugins install jahanson/devin-plugins
 ```
 
-The marketplace currently lists plugins under `optionalPlugins`. Optional plugins are endorsed but are not installed automatically. Install Matt Pocock's skills separately:
+Matt Pocock's skills are a required marketplace plugin and install automatically with the command above. To install that plugin directly without the marketplace, use:
 
 ```sh
 devin plugins install jahanson/matt-skills#skills
@@ -38,15 +38,9 @@ Skills are exposed using the plugin namespace, for example:
 /mattpocock-skills:code-review
 ```
 
-## One-command installation
+## Installation model
 
-To make marketplace installation pull in every included plugin automatically, move its entries from `optionalPlugins` to `requiredPlugins` in [`.devin-plugin/plugin.json`](.devin-plugin/plugin.json). Then this command installs the meta-plugin and all required plugins recursively:
-
-```sh
-devin plugins install jahanson/devin-plugins
-```
-
-Use `optionalPlugins` for a catalog of separately selected plugins. Use `requiredPlugins` for a baseline bundle installed as one unit.
+Marketplace entries in `requiredPlugins` install recursively as one baseline bundle. Entries in `optionalPlugins` are endorsed but must be installed separately from their source.
 
 ## Update or remove
 
