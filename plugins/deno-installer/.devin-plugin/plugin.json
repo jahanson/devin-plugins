@@ -1,0 +1,13 @@
+{
+  "name": "deno-installer",
+  "version": "0.1.0",
+  "description": "Install the latest stable Deno runtime using Deno's official platform installer.",
+  "homepage": "https://docs.deno.com/runtime/getting_started/installation/",
+  "repository": "https://github.com/jahanson/devin-plugins",
+  "license": "MIT",
+  "keywords": [
+    "deno",
+    "runtime",
+    "installer"
+  ]
+}

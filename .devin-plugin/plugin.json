@@ -7,6 +7,11 @@
       "source": "git-subdir",
       "url": "https://github.com/jahanson/matt-skills.git",
       "path": "skills"
+    },
+    {
+      "source": "git-subdir",
+      "url": "https://github.com/jahanson/devin-plugins.git",
+      "path": "plugins/deno-installer"
     }
   ]
 }

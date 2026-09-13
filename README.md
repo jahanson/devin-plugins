@@ -7,6 +7,7 @@ A curated marketplace of plugins for the Devin CLI.
 | Plugin | Source | Contents |
 | --- | --- | --- |
 | `mattpocock-skills` | [`jahanson/matt-skills`](https://github.com/jahanson/matt-skills) | 25 promoted engineering and productivity skills |
+| `deno-installer` | this repository | User-invoked installation of the latest stable Deno runtime |
 
 The Matt Pocock plugin uses `skills/` as its plugin boundary. It loads only the `engineering/` and `productivity/` collections, excluding repository-level rules, hooks, agents, and the `misc/`, `in-progress/`, and `deprecated/` skill buckets.
 
@@ -18,10 +19,11 @@ Install the marketplace meta-plugin:
 devin plugins install jahanson/devin-plugins
 ```
 
-Matt Pocock's skills are a required marketplace plugin and install automatically with the command above. To install that plugin directly without the marketplace, use:
+Matt Pocock's skills and the Deno installer are required marketplace plugins and install automatically with the command above. To install them directly without the marketplace, use:
 
 ```sh
 devin plugins install jahanson/matt-skills#skills
+devin plugins install jahanson/devin-plugins#plugins/deno-installer
 ```
 
 Verify the installation:
@@ -29,6 +31,7 @@ Verify the installation:
 ```sh
 devin plugins list
 devin plugins info mattpocock-skills
+devin plugins info deno-installer
 ```
 
 Skills are exposed using the plugin namespace, for example:
@@ -36,6 +39,7 @@ Skills are exposed using the plugin namespace, for example:
 ```text
 /mattpocock-skills:tdd
 /mattpocock-skills:code-review
+/deno-installer:install-deno
 ```
 
 ## Installation model
@@ -46,9 +50,11 @@ Marketplace entries in `requiredPlugins` install recursively as one baseline bun
 
 ```sh
 devin plugins update mattpocock-skills
+devin plugins update deno-installer
 devin plugins update hsn-marketplace
 
 devin plugins remove mattpocock-skills
+devin plugins remove deno-installer
 devin plugins remove hsn-marketplace
 ```
 
@@ -64,6 +70,7 @@ Install the local Matt skills plugin directly while editing it:
 
 ```sh
 devin plugins install --local V:/matt-skills/skills
+devin plugins install --local ./plugins/deno-installer
 ```
 
 Local-folder plugins are linked, so edits apply in the next Devin session without running `devin plugins update`.
@@ -72,6 +79,7 @@ Local-folder plugins are linked, so edits apply in the next Devin session withou
 
 ```text
 .devin-plugin/plugin.json     Marketplace meta-plugin manifest
+plugins/<plugin-name>/        Plugins maintained in this repository
 docs/research/                Devin CLI plugin research
 ```
 
@@ -83,6 +91,7 @@ The marketplace is an ordinary Devin plugin whose dependency lists act as its ca
 - [Team marketplace quickstart](https://docs.devin.ai/cli/extensibility/plugins/quickstart)
 - [Plugin ecosystem guide](https://docs.devin.ai/product-guides/plugin-ecosystem)
 - [Local research](docs/research/devin-cli-plugins.md)
+- [Install Deno](https://docs.deno.com/runtime/getting_started/installation/)
 
 ## Maintaining the marketplace
 
